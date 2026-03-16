@@ -1,0 +1,85 @@
+/* General page styling */
+.page-container {
+  padding: 100px 60px 60px 60px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Page headers */
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.page-header p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+/* Page content */
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Cards */
+.info-card, .service-card, .contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 25px;
+  border-radius: 15px;
+  min-width: 250px;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  transition: 0.4s ease;
+}
+
+.info-card:hover, .service-card:hover, .contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 204, 0, 0.4);
+}
+
+.info-card h2, .service-card h3, .contact-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.info-card p, .service-card p, .contact-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ddd;
+  opacity: 0.9;
+}
+
+/* Grid adjustments for Services and Contact */
+.services-grid, .contact-grid {
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 80px 30px;
+  }
+  .page-header h1 {
+    font-size: 36px;
+  }
+  .page-content {
+    gap: 20px;
+  }
+  .info-card, .service-card, .contact-card {
+    min-width: 90%;
+    max-width: 100%;
+  }
+}

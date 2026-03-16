@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* 🎬 Fullscreen Video Wrapper - FIXED to viewport */
+.video-wrapper {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2; /* Lowest layer */
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the video fill the screen perfectly */
+}
+
+/* 🩸 The Cinematic Overlay */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: -1; /* Above video, below text */
+}
+
+/* Navbar */
+.home-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.nav-links a {
+  margin-left: 35px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #ffcc00;
+}
+
+/* Main Content Layout */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section {
+  max-width: 600px;
+}
+
+.main-title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.main-title span {
+  color: #ffcc00;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* 🔍 Search Bar */
+.search-container {
+  background: white;
+  padding: 5px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.search-box {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  border-radius: 10px;
+}
+
+.offer-tagline {
+  margin-top: 15px;
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Right Section Slider */
+.image-container {
+  flex-shrink: 0;
+}
+
+.slider-img {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  transition: transform 0.5s ease;
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 1024px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+  }
+  .slider-img {
+    width: 300px;
+    height: 300px;
+    margin-top: 40px;
+  }
+  .search-container {
+    margin: 0 auto;
+  }
+}
+
