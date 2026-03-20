@@ -32,15 +32,7 @@ function Home() {
       </div>
 
       {/* NAVBAR */}
-      <nav className="home-navbar">
-        
-        <div className="nav-links">
-          <a href="/">HOME</a>
-          <a href="/about">ABOUT</a>
-          <a href="/services">SERVICES</a>
-          <a href="/contact">CONTACT</a>
-        </div>
-      </nav>
+      
 
       {/* MAIN CONTENT (Centered) */}
       <div className="home-content">
