@@ -1,104 +1,108 @@
 /* --- FOODZONE MASTER STYLES (Fz.css) --- */
 
 /* 1. Main Container */
+/* ===== CONTAINER (8 cards layout) ===== */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 25px;
+  padding: 40px 60px;
+  justify-items: center;
 }
 
-/* 2. The Card Structure */
+/* ===== CARD ===== */
 .card {
-  width: 280px;
-  min-height: 500px; /* Symmetry: All cards will be the same height */
+  width: 260px;
+  height: 340px; /* reduced height */
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   background: white;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
 }
 
-/* 3. Image Styling */
+/* ===== IMAGE ===== */
 .card img {
   width: 100%;
-  height: 200px;
+  height: 140px; /* reduced */
   object-fit: cover;
 }
 
-/* 4. THE CENTER FIX: Name and Description */
+/* ===== CONTENT ===== */
 .card-content {
-  flex-grow: 1;           /* Acts as a spring to push the bottom div down */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers text vertically */
-  align-items: center;    /* Centers text horizontally */
-  padding: 20px;
+  flex-grow: 1;
+  padding: 12px;
   text-align: center;
 }
 
 .card-content h3 {
-  margin: 0 0 10px 0;
-  font-size: 22px;
+  font-size: 18px;
+  margin-bottom: 6px;
   color: #333;
 }
 
 .card-content p {
-  font-size: 14px;
+  font-size: 13px;
   color: #666;
-  margin: 0;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
-/* 5. Bottom Section: Price and Button */
+/* ===== BOTTOM ===== */
 .card-bottom {
-  padding: 20px;
-  padding-top: 0;
+  padding: 10px 15px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .price {
-  font-size: 24px;
-  font-weight: 800;
-  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
 }
 
+/* ===== BUTTON (NO COLOR CHANGE) ===== */
 .card button {
   width: 100%;
-  color: white;
+  background-color: #facc15; /* your color */
+  color: black;
   border: none;
-  padding: 12px;
-  border-radius: 30px;
+  padding: 10px;
+  border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-/* 6. Badge Styling */
+/* lock hover */
+.card button:hover {
+  background-color: #facc15;
+}
+
+/* ===== BADGE ===== */
 .badge {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 12px;
+  left: 12px;
+  background: red;
   color: white;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: bold;
-  z-index: 10;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 10px;
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 /* --- THEME COLORS --- */
 
 /* Green Theme (Veg & Jain) */

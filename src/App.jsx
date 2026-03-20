@@ -49,15 +49,12 @@ useEffect(() => {
   return (
     <BrowserRouter>
     <nav className="navbar">
+
+  {/* 🔰 LOGO */}
   <h1 className="logo">
     Swadesh
     <span className="chakra-wrapper">
-      <svg
-        className="chakra-svg"
-        viewBox="0 0 100 100"
-        width="32"
-        height="32"
-      >
+      <svg viewBox="0 0 100 100" width="28" height="28">
         <circle cx="50" cy="50" r="45" stroke="#000080" strokeWidth="4" fill="none" />
         <circle cx="50" cy="50" r="6" fill="#000080" />
         {[...Array(24)].map((_, i) => (
@@ -77,61 +74,73 @@ useEffect(() => {
     Swad
   </h1>
 
+  {/* 🔗 NAV LINKS */}
   <div className="nav-links">
-  <NavLink to="/" className="nav-item"><i class="fa-solid fa-house-chimney"></i>Home</NavLink>
-  <NavLink to="/veg" className="nav-item"><i className="fa-solid fa-carrot"></i>Veg</NavLink>
-  <NavLink to="/nonveg" className="nav-item"><i className="fa-solid fa-drumstick-bite"></i>NonVeg</NavLink>
-  <NavLink to="/jain" className="nav-item"><i className="fa-solid fa-leaf"></i>Jain</NavLink>
-  <NavLink to="/vegan" className="nav-item"><i className="fa-solid fa-apple-whole"></i>Vegan</NavLink>
-  <NavLink to="/desserts" className="nav-item"><i className="fa-solid fa-ice-cream"></i>Desserts</NavLink>
 
-  <NavLink to="/cart" className="nav-item">
-  <i className="fa-solid fa-cart-shopping"></i>
-  Cart
-  <span className="cart-count">{totalQuantity}</span>
-</NavLink>
+    <NavLink to="/" className="nav-item">
+      <i className="fa-solid fa-house-chimney"></i> Home
+    </NavLink>
 
-  <NavLink to="/orderlist" className="nav-item"><i class="fa-solid fa-list"></i>Orders</NavLink>
+    <NavLink to="/veg" className="nav-item">
+      <i className="fa-solid fa-carrot"></i> Veg
+    </NavLink>
+
+    <NavLink to="/nonveg" className="nav-item">
+      <i className="fa-solid fa-drumstick-bite"></i> NonVeg
+    </NavLink>
+
+    <NavLink to="/jain" className="nav-item">
+      <i className="fa-solid fa-leaf"></i> Jain
+    </NavLink>
+
+    <NavLink to="/vegan" className="nav-item">
+      <i className="fa-solid fa-apple-whole"></i> Vegan
+    </NavLink>
+
+    <NavLink to="/desserts" className="nav-item">
+      <i className="fa-solid fa-ice-cream"></i> Desserts
+    </NavLink>
+
+    <NavLink to="/cart" className="nav-item">
+      <i className="fa-solid fa-cart-shopping"></i>
+      Cart <span className="cart-count">{totalQuantity}</span>
+    </NavLink>
+
+    <NavLink to="/orderlist" className="nav-item">
+      <i className="fa-solid fa-list"></i> Orders
+    </NavLink>
+
     <NavLink to="/about" className="nav-item">
-    <i className="fa-solid fa-circle-info"></i>About
-  </NavLink>
+      <i className="fa-solid fa-circle-info"></i> About
+    </NavLink>
 
-  <NavLink to="/services" className="nav-item">
-    <i className="fa-solid fa-gear"></i>Services
-  </NavLink>
-
-  <NavLink to="/contact" className="nav-item">
-    <i className="fa-solid fa-phone"></i>Contact
-  </NavLink>
-
-
-  {/* PROFILE ICON */}
-   <div className="profile-menu">
-
-  <i
-    className="fa-solid fa-user profile-icon"
-    onClick={() => setProfileOpen(!profileOpen)}
-  ></i>
-
-  <div className={`dropdown ${profileOpen ? "show" : ""}`}>
-
-    {!loggedIn ? (
-      <>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/register">Register</NavLink>
-      </>
-    ) : (
-      <>
-        <p className="username">{user?.name}</p> {/* ✅ ADDED */}
-        <button onClick={handleLogout}>Logout</button>
-      </>
-    )}
-
+    <NavLink to="/contact" className="nav-item">
+      <i className="fa-solid fa-phone"></i> Contact
+    </NavLink>
   </div>
 
-</div>
+  {/* 👤 PROFILE */}
+  <div className="profile-menu">
+    <i
+      className="fa-solid fa-user profile-icon"
+      onClick={() => setProfileOpen(!profileOpen)}
+    ></i>
 
-</div>
+    <div className={`dropdown ${profileOpen ? "show" : ""}`}>
+      {!loggedIn ? (
+        <>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/register">Register</NavLink>
+        </>
+      ) : (
+        <>
+          <p className="username">{user?.name}</p>
+          <button onClick={handleLogout}>Logout</button>
+        </>
+      )}
+    </div>
+  </div>
+
 </nav>
 
 <Routes>
@@ -147,7 +156,7 @@ useEffect(() => {
   <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
   <Route path="/register" element={<Registration />}/>
   <Route path="/about" element={<About />} />
-  <Route path="/services" element={<Services />} />
+  
   <Route path="/contact" element={<Contact />} />
 </Routes>
 
