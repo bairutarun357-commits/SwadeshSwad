@@ -1,4 +1,5 @@
 /* --- LUXURY COLOR VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap');
 :root {
   --gold: #d4af37;
   --premium-red: #ff5261;
@@ -318,7 +319,7 @@ body {
 
 
 /* --- Promise Section Styles --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap');
+
 
 .premium-promise-section {
   padding: 100px 5%;
