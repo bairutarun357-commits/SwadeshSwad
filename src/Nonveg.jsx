@@ -62,6 +62,78 @@ function Nonveg() {
   price: 190,
   description: "Grilled chicken wrapped in soft bread.",
   image: "/shawarma.jpg"
+},
+{
+  name: "Chicken Dum Biryani",
+  price: 260,
+  description: "Authentic dum-cooked biryani with rich spices and saffron.",
+  image: "/hydchickenbiryani.jpg"
+},
+{
+  name: "Chicken Korma",
+  price: 270,
+  description: "Mild and creamy chicken curry with cashew gravy.",
+  image: "/chickenkorma.jpg"
+},
+{
+  name: "Pepper Chicken",
+  price: 230,
+  description: "Spicy black pepper chicken with South Indian flavors.",
+  image: "/pepperchicken.jpeg"
+},
+{
+  name: "Chicken Lollipop",
+  price: 220,
+  description: "Crispy fried chicken wings in Indo-Chinese style.",
+  image: "/lollipop.jpg"
+},
+{
+  name: "Apollo Fish",
+  price: 260,
+  description: "Hyderabadi style spicy fried fish with curry leaves.",
+  image: "/apollofish.jpg"
+},
+{
+  name: "Prawns Fry",
+  price: 340,
+  description: "Crispy fried prawns with garlic and spices.",
+  image: "/prawnsfry.jpeg"
+},
+{
+  name: "Mutton Rogan Josh",
+  price: 340,
+  description: "Slow-cooked mutton in rich Kashmiri gravy.",
+  image: "/roganjosh.jpg"
+},
+{
+  name: "Chicken Curry (Andhra Style)",
+  price: 240,
+  description: "Spicy Andhra-style chicken curry with bold flavors.",
+  image: "/andhrachicken.jpg"
+},
+{
+  name: "Egg Curry",
+  price: 170,
+  description: "Boiled eggs cooked in spicy onion-tomato gravy.",
+  image: "/eggcurry.jpg"
+},
+{
+  name: "Chicken Fried Rice",
+  price: 200,
+  description: "Rice stir-fried with chicken and vegetables.",
+  image: "/chickenfriedrice.jpg"
+},
+{
+  name: "Chicken Noodles",
+  price: 190,
+  description: "Stir-fried noodles with chicken and sauces.",
+  image: "/chickennoodles.jpg"
+},
+{
+  name: "Grilled Chicken",
+  price: 300,
+  description: "Juicy grilled chicken with smoky flavor.",
+  image: "/grilledchicken.jpg"
 }
 
   ];
@@ -120,13 +192,7 @@ function Nonveg() {
     First
   </button>
 
-  {/* Previous Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage - 1)} 
-    disabled={currentPage === 1}
-  >
-    Prev
-  </button>
+ 
 
   {/* Page Numbers */}
   {[...Array(totalPages)].map((_, i) => (
@@ -139,13 +205,7 @@ function Nonveg() {
     </button>
   ))}
 
-  {/* Next Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage + 1)} 
-    disabled={currentPage === totalPages}
-  >
-    Next
-  </button>
+ 
 
   {/* Last Page */}
   <button 

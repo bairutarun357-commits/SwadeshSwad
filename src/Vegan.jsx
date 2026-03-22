@@ -62,6 +62,78 @@ function Vegan() {
   price: 160,
   description: "Healthy vegetable clear soup.",
   image: "/vegansoup.jpg"
+},
+{
+  name: "Vegan Burrito Bowl",
+  price: 260,
+  description: "Rice bowl with beans, veggies & guacamole.",
+  image: "/veganburrito.jpg"
+},
+{
+  name: "Vegan Falafel Wrap",
+  price: 210,
+  description: "Crispy falafel wrapped with hummus and veggies.",
+  image: "/falafelwrap.jpg"
+},
+{
+  name: "Vegan Hummus Platter",
+  price: 200,
+  description: "Creamy hummus served with pita bread.",
+  image: "/hummus.jpg"
+},
+{
+  name: "Vegan Stir Fry",
+  price: 220,
+  description: "Mixed vegetables stir-fried in soy sauce.",
+  image: "/veganstirfry.jpg"
+},
+{
+  name: "Vegan Noodles",
+  price: 200,
+  description: "Plant-based noodles tossed with veggies.",
+  image: "/vegannoodles.jpg"
+},
+{
+  name: "Vegan Fried Rice",
+  price: 200,
+  description: "Rice stir-fried with tofu and vegetables.",
+  image: "/veganfriedrice.jpg"
+},
+{
+  name: "Vegan Pancakes",
+  price: 190,
+  description: "Fluffy pancakes made without dairy or eggs.",
+  image: "/veganpancakes.jpg"
+},
+{
+  name: "Vegan Chocolate Cake",
+  price: 220,
+  description: "Rich chocolate cake made without dairy.",
+  image: "/vegancake.jpg"
+},
+{
+  name: "Vegan Avocado Toast",
+  price: 180,
+  description: "Toasted bread topped with mashed avocado.",
+  image: "/avocadotoast.jpg"
+},
+{
+  name: "Vegan Energy Bowl",
+  price: 250,
+  description: "Healthy mix of grains, nuts, and fruits.",
+  image: "/energybowl.jpg"
+},
+{
+  name: "Vegan Cold Coffee",
+  price: 150,
+  description: "Chilled plant-based milk coffee.",
+  image: "/vegancoffee.jpg"
+},
+{
+  name: "Vegan Ice Cream",
+  price: 180,
+  description: "Dairy-free ice cream made from plant milk.",
+  image: "/veganicecream.jpg"
 }
 
   ];
@@ -116,13 +188,7 @@ function Vegan() {
     First
   </button>
 
-  {/* Previous Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage - 1)} 
-    disabled={currentPage === 1}
-  >
-    Prev
-  </button>
+
 
   {/* Page Numbers */}
   {[...Array(totalPages)].map((_, i) => (
@@ -141,14 +207,6 @@ function Vegan() {
     disabled={currentPage === totalPages}
   >
     Next
-  </button>
-
-  {/* Last Page */}
-  <button 
-    onClick={() => setCurrentPage(totalPages)} 
-    disabled={currentPage === totalPages}
-  >
-    Last
   </button>
 
 </div>

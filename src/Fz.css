@@ -70,13 +70,14 @@
 
 /* ===== BUTTON (NO COLOR CHANGE) ===== */
 .card button {
-  width: 100%;
-  background-color: #facc15; /* your color */
+  width: 80%;              /* 👈 reduced width */
+  padding: 6px 10px;       /* 👈 smaller padding */
+  font-size: 13px;         /* 👈 smaller text */
+  border-radius: 20px;     /* slightly tighter */
+  background-color: #facc15;
   color: black;
   border: none;
-  padding: 10px;
-  border-radius: 25px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
 }
 

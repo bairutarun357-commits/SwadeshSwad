@@ -1,41 +1,78 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./pages.css";
 
 function About() {
+  // Animation variants for the text
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
+
   return (
-    <div className="page-container">
-      <div className="page-header about-header">
-        <h1>About Us</h1>
-        <p>Experience luxury dining and authentic flavors with Swadesh</p>
-      </div>
+    <div className="about-wrapper">
+      {/* HERO SECTION */}
+        {/* SECTION: GLOBAL FLAVORS (From Image) */}
+<section className="global-flavors-section">
+  <div className="flavors-content">
+    <span className="accent-text">we speak fluent food</span>
+    <h2 className="main-title">
+      NO MATTER WHICH <br /> 
+      CORNER OF THE <br /> 
+      Bharat <span className="italic-highlight">it's from</span>
+    </h2>
+    <p className="description">
+     Authentic, home-style Indian meals. From the spice markets of Jammu Kashmir 
+      to the coastal kitchens of Kerala, the true taste of Swadesh delivered fresh.
+    </p>
+    <button className="order-btn-yellow">
+      Order Now <span className="arrow">→</span>
+    </button>
+    <div className="features-row">
+      <span>● Cooked to Order</span>
+      <span>● Menu Changes Weekly</span>
+      <span>● Everyday Pricing</span>
+    </div>
+  </div>
 
-      <div className="page-content">
-        <div className="info-card">
-          <h2>Our Story</h2>
-          <p>
-            Swadesh brings the finest ingredients and traditional Indian flavors
-            together with a modern, premium dining experience. Every dish is
-            crafted to delight your senses.
-          </p>
-        </div>
+  <div className="flavors-image-container">
+    <img src="/indian1.jpg" alt="Global Food Bowls" className="main-bowl-img" />
+    <div className="stats-badge">
+      <span className="count">7M+</span>
+      <span className="label">Happy Customers</span>
+    </div>
+    <div className="rating-badge">
+      <span className="score">4.1</span>
+      <span className="label">Rating</span>
+    </div>
+  </div>
+</section>
 
-        <div className="info-card">
-          <h2>Our Philosophy</h2>
-          <p>
-            Quality, authenticity, and hospitality are at the heart of everything
-            we do. From farm-fresh ingredients to elegant plating, we aim to
-            provide a luxury experience in every bite.
-          </p>
-        </div>
-
-        <div className="info-card">
-          <h2>Our Team</h2>
-          <p>
-            Our chefs, sommeliers, and service team are highly trained and
-            dedicated to delivering world-class dining for every guest.
-          </p>
-        </div>
-      </div>
+      {/* SCROLLABLE DETAIL SECTIONS */}
+      <section className="about-details">
+        {[
+          { title: "Our Story", text: "Swadesh Swad brings the essence of Bharat to your plate.", img: "/indian2.jpg", rev: false },
+          { title: "Our Philosophy", text: "Quality and authenticity in every single bite.", img: "/indian3.jpg", rev: true }
+        ].map((item, index) => (
+          <motion.div 
+            className={`detail-row ${item.rev ? 'reverse' : ''}`}
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <div className="detail-text">
+              <h2>{item.title}</h2>
+              <p>{item.text}</p>
+            </div>
+            <div className="detail-visual">
+              <img src={item.img} alt={item.title} />
+            </div>
+          </motion.div>
+        ))}
+      </section>
     </div>
   );
 }

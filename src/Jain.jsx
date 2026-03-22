@@ -61,6 +61,78 @@ function Jain() {
   price: 140,
   description: "Soft Gujarati flatbread without root ingredients.",
   image: "/jainthepla.webp"
+},
+{
+  name: "Jain Palak Paneer",
+  price: 250,
+  description: "Paneer cooked in spinach gravy without onion & garlic.",
+  image: "/jainpalakpaneer.jpg"
+},
+{
+  name: "Jain Malai Kofta",
+  price: 270,
+  description: "Soft kofta balls in creamy gravy (no onion, no garlic).",
+  image: "/jainkofta.jpg"
+},
+{
+  name: "Jain Tomato Curry",
+  price: 180,
+  description: "Tangy tomato-based curry with mild spices.",
+  image: "/jaintomato.webp"
+},
+{
+  name: "Jain Capsicum Masala",
+  price: 200,
+  description: "Capsicum cooked with aromatic Jain spices.",
+  image: "/jaincapsicum.jpg"
+},
+{
+  name: "Jain Corn Curry",
+  price: 210,
+  description: "Sweet corn cooked in creamy Jain-style gravy.",
+  image: "/jaincorn.jpg"
+},
+{
+  name: "Jain Veg Fried Rice",
+  price: 180,
+  description: "Rice stir-fried with vegetables (no root veg).",
+  image: "/jainfriedrice.jpg"
+},
+{
+  name: "Jain Hakka Noodles",
+  price: 180,
+  description: "Noodles tossed with vegetables and sauces (no onion/garlic).",
+  image: "/jainnoodles.jpg"
+},
+{
+  name: "Jain Moong Dal",
+  price: 150,
+  description: "Light and healthy moong dal prepared Jain style.",
+  image: "/jainmoongdal.jpg"
+},
+{
+  name: "Jain Tawa Roti",
+  price: 40,
+  description: "Soft whole wheat roti without any root ingredients.",
+  image: "/jainroti.jpg"
+},
+{
+  name: "Jain Jeera Rice",
+  price: 150,
+  description: "Basmati rice flavored with cumin and ghee.",
+  image: "/jainjeerarice.jpg"
+},
+{
+  name: "Jain Sweet Lassi",
+  price: 90,
+  description: "Refreshing yogurt drink, lightly sweetened.",
+  image: "/jainlassi.jpg"
+},
+{
+  name: "Jain Fruit Salad",
+  price: 120,
+  description: "Fresh seasonal fruits served chilled.",
+  image: "/jainfruitsalad.jpg"
 }
 
   ];
@@ -115,14 +187,6 @@ function Jain() {
     First
   </button>
 
-  {/* Previous Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage - 1)} 
-    disabled={currentPage === 1}
-  >
-    Prev
-  </button>
-
   {/* Page Numbers */}
   {[...Array(totalPages)].map((_, i) => (
     <button 
@@ -133,14 +197,6 @@ function Jain() {
       {i + 1}
     </button>
   ))}
-
-  {/* Next Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage + 1)} 
-    disabled={currentPage === totalPages}
-  >
-    Next
-  </button>
 
   {/* Last Page */}
   <button 

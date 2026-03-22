@@ -63,7 +63,79 @@ function Veg() {
       price: 200,
       description: "Vegetable balls in spicy Indo-Chinese sauce.",
       image: "/vmanchurian.jpg"
-    }
+    },
+    {
+  name: "Palak Paneer",
+  price: 230,
+  description: "Paneer cubes cooked in a smooth spinach gravy.",
+  image: "/palakpaneer.jpg"
+},
+{
+  name: "Chole Masala",
+  price: 190,
+  description: "Spicy chickpea curry cooked in Punjabi style.",
+  image: "/chole.jpg"
+},
+{
+  name: "Malai Kofta",
+  price: 260,
+  description: "Soft paneer & potato dumplings in rich creamy gravy.",
+  image: "/malaikofta.jpg"
+},
+{
+  name: "Rajma Masala",
+  price: 180,
+  description: "Red kidney beans slow-cooked in thick tomato gravy.",
+  image: "/rajma.jpg"
+},
+{
+  name: "Baingan Bharta",
+  price: 170,
+  description: "Smoky mashed brinjal cooked with onions and spices.",
+  image: "/baingan.jpg"
+},
+{
+  name: "Veg Pulao",
+  price: 170,
+  description: "Fragrant rice cooked with vegetables and mild spices.",
+  image: "/pulao.jpg"
+},
+{
+  name: "Paneer Tikka Masala",
+  price: 250,
+  description: "Grilled paneer cooked in spicy tikka gravy.",
+  image: "/paneertikka.jpg"
+},
+{
+  name: "Mix Veg Curry",
+  price: 180,
+  description: "Seasonal vegetables cooked in rich Indian gravy.",
+  image: "/mixveg.jpg"
+},
+{
+  name: "Corn Masala",
+  price: 190,
+  description: "Sweet corn cooked in creamy spicy masala.",
+  image: "/cornmasala.jpg"
+},
+{
+  name: "Veg Hakka Noodles",
+  price: 180,
+  description: "Stir-fried noodles with vegetables and sauces.",
+  image: "/noodles.jpg"
+},
+{
+  name: "Gobi Manchurian",
+  price: 200,
+  description: "Crispy cauliflower tossed in Indo-Chinese sauce.",
+  image: "/gobi.jpg"
+},
+{
+  name: "Paneer Bhurji",
+  price: 210,
+  description: "Scrambled paneer cooked with onions and spices.",
+  image: "/paneerbhurji.jpg"
+}
   ];
 
 
@@ -120,13 +192,7 @@ function Veg() {
     First
   </button>
 
-  {/* Previous Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage - 1)} 
-    disabled={currentPage === 1}
-  >
-    Prev
-  </button>
+  
 
   {/* Page Numbers */}
   {[...Array(totalPages)].map((_, i) => (
@@ -139,13 +205,6 @@ function Veg() {
     </button>
   ))}
 
-  {/* Next Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage + 1)} 
-    disabled={currentPage === totalPages}
-  >
-    Next
-  </button>
 
   {/* Last Page */}
   <button 

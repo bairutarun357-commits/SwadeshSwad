@@ -1,85 +1,156 @@
-/* General page styling */
-.page-container {
-  padding: 100px 60px 60px 60px;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-  color: #fff;
+/* Container Setup */
+.about-wrapper {
+  background-color: #fafafa;
+  color: #2d2d2d;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Page headers */
-.page-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.page-header h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #ffcc00;
-}
-
-.page-header p {
-  font-size: 18px;
-  color: #ccc;
-}
-
-/* Page content */
-.page-content {
+/* GLOBAL FLAVORS SECTION */
+.global-flavors-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  background-color: #fff;
+  gap: 50px;
 }
 
-/* Cards */
-.info-card, .service-card, .contact-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px 25px;
-  border-radius: 15px;
-  min-width: 250px;
-  max-width: 350px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-  transition: 0.4s ease;
+.flavors-content {
+  flex: 1;
 }
 
-.info-card:hover, .service-card:hover, .contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 204, 0, 0.4);
-}
-
-.info-card h2, .service-card h3, .contact-card h3 {
-  font-size: 22px;
+.accent-text {
+  font-family: 'Dancing Script', cursive; /* Import from Google Fonts */
+  color: #4CAF50;
+  font-size: 1.5rem;
+  display: block;
   margin-bottom: 15px;
-  color: #ffcc00;
 }
 
-.info-card p, .service-card p, .contact-card p {
-  font-size: 15px;
+.main-title {
+  font-family: 'Montserrat', sans-serif; /* Heavy bold weight */
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.italic-highlight {
+  font-family: 'Dancing Script', cursive;
+  color: #FFD700;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 450px;
   line-height: 1.6;
-  color: #ddd;
-  opacity: 0.9;
+  margin-bottom: 30px;
 }
 
-/* Grid adjustments for Services and Contact */
-.services-grid, .contact-grid {
-  justify-content: center;
+.order-btn-yellow {
+  background-color: #FFD700;
+  border: none;
+  padding: 15px 35px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  margin-bottom: 40px;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .page-container {
-    padding: 80px 30px;
-  }
-  .page-header h1 {
-    font-size: 36px;
-  }
-  .page-content {
-    gap: 20px;
-  }
-  .info-card, .service-card, .contact-card {
-    min-width: 90%;
-    max-width: 100%;
-  }
+.features-row {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* IMAGE SECTION */
+.flavors-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.main-bowl-img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.stats-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stats-badge .count {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.rating-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+
+
+/* Content Rows */
+.about-details {
+  padding: 100px 10%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 150px;
+}
+
+.detail-row.reverse { flex-direction: row-reverse; }
+
+.detail-text { flex: 1; }
+.detail-text h2 { font-size: 2.8rem; color: #ff5261; margin-bottom: 15px; }
+.detail-text p { font-size: 1.15rem; color: #444; line-height: 1.8; }
+
+.detail-visual { flex: 1; }
+.detail-visual img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.detail-visual img:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+  .premium-title { font-size: 2.8rem; }
+  .float-img { width: 120px; opacity: 0.4; }
+  .detail-row, .detail-row.reverse { flex-direction: column; gap: 40px; }
 }

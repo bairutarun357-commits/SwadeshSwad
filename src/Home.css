@@ -1,16 +1,43 @@
-/* Full Screen Hero */
+/* --- LUXURY COLOR VARIABLES --- */
+:root {
+  --gold: #d4af37;
+  --premium-red: #ff5261;
+  --dark-bg: #111111;
+  --soft-white: #f8f8f8;
+  --glass: rgba(255, 255, 255, 0.05);
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fffaf3, #fdf6ec);
+  color: #333;
+}
+
+/* --- 1. HERO VIDEO SECTION --- */
+/* --- CLEAN HERO REFINEMENT --- */
 .hero-video-section {
   position: relative;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  margin-top: -70px; /* Pulls video behind navbar */
+  margin-top: 0px; 
 }
 
 .bg-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Brighter, natural look */
+  filter: brightness(1.05) contrast(1.05); 
+  transform: scale(1.02);
 }
 
 .video-overlay {
@@ -19,147 +46,536 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Darkens video so text is readable */
+  /* Subtle vignetting instead of a heavy black wall */
+  background: radial-gradient(
+    circle at 20% 50%, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.1) 100%
+  );
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white;
+  padding: 0 10%;
 }
-
 
 .hero-text-center {
-  position: absolute;
-  top: 50%;
-  left: 80px;              /* push from left like image */
-  transform: translateY(-50%);
-  
-  text-align: left;        /* IMPORTANT */
-  max-width: 650px;        /* controls line break */
-  color: white;
+  max-width: 800px;
+  text-align: left;
+  /* Added a slight text-reveal animation feel */
+  animation: reveal 1.2s ease-out;
 }
 
-/* Heading */
 .hero-text-center h1 {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -1px;
+  font-size: 88px; /* Slightly larger for impact */
+  font-weight: 800;
+  line-height: 0.95;
+  color: #fff;
+  letter-spacing: -3px;
+  margin-bottom: 15px;
+  /* Removed heavy shadows for a cleaner, flatter look */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Bharat highlight */
 .hero-text-center .highlight {
-  color: #facc15;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 5px;
 }
 
-/* Subtitle */
 .subtitle {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #e5e5e5;
+  margin: 20px 0 35px;
+  font-size: 1.25rem;
+  color: #f0f0f0;
   line-height: 1.6;
-  max-width: 550px;
+  max-width: 580px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
-/* Offer text */
 .offer {
-  margin-top: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #facc15;
+  font-weight: 500;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px; /* More spacing looks more expensive */
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Button */
+/* Subtle gold line next to offer */
+.offer::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+
 .order-now-btn {
-  margin-top: 25px;
-  padding: 12px 30px;
-  font-size: 16px;
-  background-color: #facc15;
-  color: black;
+  background: var(--gold);
+  color: #111;
+  padding: 20px 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   border: none;
-  border-radius: 6px;
+  border-radius: 2px; /* Very slight roundness looks more professional than 0 */
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Special Picks Section */
+.order-now-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- MOBILE CLEANUP --- */
+@media (max-width: 768px) {
+  .hero-text-center h1 { font-size: 52px; letter-spacing: -1px; }
+  .video-overlay { background: rgba(0,0,0,0.4); padding: 0 5%; }
+  .subtitle { font-size: 1rem; }
+}
+/* --- 2. SPECIAL PICKS (SCROLLING) --- */
+/* ===== PREMIUM BACKGROUND ===== */
 .special-picks {
-  background: white;
+  background: linear-gradient(135deg, #fff3e0, #ffe0c3, #ffd2a8);
   padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ soft light overlay */
+.special-picks::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.5), transparent 60%);
+  pointer-events: none;
+}
+
+/* ===== TITLE ===== */
+.section-title {
   text-align: center;
-  color: #333;
+  margin-bottom: 20px;
 }
 
-.special-picks {
-  background: #f5f5f5;
-  padding: 40px 0;
-  overflow: hidden;
+.section-title h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
 }
 
-/* wrapper */
+/* ===== SLIDER ===== */
 .slider {
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
-/* moving track */
+/* Smooth infinite scroll */
 .slide-track {
   display: flex;
-  width: calc(160px * 8); /* 8 items */
-  animation: scroll 18s linear infinite;
+  gap: 30px;
+  animation: scroll 35s linear infinite;
 }
 
-/* each circle */
+/* Pause on hover 🔥 */
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+/* ===== CARD ===== */
 .pick-circle {
-  width: 120px;
-  height: 120px;
-  margin: 0 20px;
+  width: 180px;
+  height: 180px;
   flex-shrink: 0;
+  perspective: 1000px;
 }
 
+/* IMAGE STYLE */
 .pick-circle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #ddd;
-  transition: transform 0.3s;
+
+  /* 💎 GLASS EFFECT */
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+
+  border: 2px solid rgba(255,255,255,0.8);
+
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.15),
+    inset 0 2px 8px rgba(255,255,255,0.5);
+
+  transition: all 0.4s ease;
 }
 
-.pick-circle img:hover {
-  transform: scale(1.1);
+/* 🔥 3D HOVER */
+.pick-circle:hover img {
+  transform: scale(1.15) rotateY(8deg);
+  box-shadow: 
+    0 25px 50px rgba(0,0,0,0.25),
+    inset 0 3px 10px rgba(255,255,255,0.6);
 }
 
-/* animation */
-.slide-track {
-  display: flex;
-  animation: scroll 20s linear infinite;
+/* ✨ subtle floating animation */
+.pick-circle {
+  animation: float 4s ease-in-out infinite;
 }
 
-/* KEY PART */
+.pick-circle:nth-child(even) {
+  animation-delay: 1s;
+}
+
+/* ===== ANIMATIONS ===== */
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-/* Promise Section (3 Cards) */
-.promise-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 80px 10%;
-  background: #fdfdfd;
-  color: #333;
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.promise-card {
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .pick-circle {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* --- 3. FLOATING ASSETS SECTION (ZOMATO STYLE) --- */
+.about-hero {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #fffaf3, #fff3e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Essential for absolute children */
+  overflow: hidden;
+}
+
+.hero-center-text {
+  position: relative;
+  z-index: 20; /* Higher than images */
   text-align: center;
-  padding: 20px;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.promise-card h3 {
-  margin: 15px 0;
-  color: #222;
+.premium-title {
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive sizing */
+  font-weight: 800;
+  color: #e31837; /* Example red */
+  line-height: 1.1;
+}
+
+.premium-title span { color: #111; }
+
+.hero-subtext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
+
+.float-img {
+  position: absolute;
+  z-index: 5; /* Lower than text */
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+  pointer-events: none; /* Allows clicking "through" the image to the text */
+}
+
+/* Positioning */
+.f-left-deco { left: 5%; top: 10%; width: 260px; } 
+.f-left { left: 3%; bottom: 10%; width: 220px; } 
+.f-right-top { right: 8%; top: 15%; width: 240px; } 
+.f-right-bottom { right: 5%; bottom: 8%; width: 250px; }
+
+/* Responsive fix: Shrink images on small screens so they don't cover the text */
+@media (max-width: 768px) {
+  .float-img {
+    width: 120px !important;
+    opacity: 0.6; /* Slight fade so text is easier to read */
+  }
+}
+
+/* --- 4. PROMISE CARDS (GLASSMOPHISM) --- */
+
+
+/* --- Promise Section Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap');
+
+.premium-promise-section {
+  padding: 100px 5%;
+ background: linear-gradient(180deg, #fff8f0, #fdebdc);
+  text-align: center;
+}
+
+.promise-header {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- THE TRICOLOR LOGO-STYLE HEADER --- */
+
+
+  /* 💎 GOLD PREMIUM TEXT */
+ /* ===== PREMIUM TEXT ===== */
+.patriotic-title {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  /* 💎 GOLD SHIMMER */
+  background: linear-gradient(
+    120deg,
+    #d4af37 20%,
+    #fff3b0 40%,
+    #d4af37 60%
+  );
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: goldShimmer 4s linear infinite;
+
+  text-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+/* ✨ Shimmer animation */
+@keyframes goldShimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ===== CHAKRA ===== */
+.rotating-chakra {
+  animation: rotateChakra 20s linear infinite, pulseGlow 2.5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 10px rgba(10, 31, 68, 0.4))
+    drop-shadow(0 6px 20px rgba(0,0,0,0.3));
+}
+
+/* Chakra parts */
+.chakra-ring {
+  stroke: #0a1f44;
+  stroke-width: 5;
+  fill: none;
+}
+
+.chakra-center {
+  fill: #0a1f44;
+}
+
+.chakra-spoke {
+  stroke: #0a1f44;
+  stroke-width: 3.5;
+}
+
+/* 🔵 Rotation */
+@keyframes rotateChakra {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ✨ Glow pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 8px rgba(10,31,68,0.4))
+      drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 20px rgba(10,31,68,0.8))
+      drop-shadow(0 10px 25px rgba(0,0,0,0.4));
+  }
+}
+
+/* ===== HOVER MAGIC ===== */
+.patriotic-title:hover {
+  transform: scale(1.03);
+  transition: 0.4s ease;
+}
+
+.patriotic-title:hover .rotating-chakra {
+  animation-duration: 6s; /* faster spin on hover */
+}
+
+/* ===== TEXT SPACING ===== */
+.logo-text-left,
+.logo-text-right {
+  letter-spacing: 5px;
+}
+/* 
+.premium-divider {
+  width: 50px;
+  height: 2px;
+  background-color: #000080;
+  margin: 20px 0;
+  opacity: 0.6;
+} */
+
+.promise-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- THE CARD GRID --- */
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.promise-card-luxury {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promise-card-luxury:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 220px;
+}
+
+.promise-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.promise-card-title {
+  margin: 0 0 10px 0 !important;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.promise-card-desc {
+  margin: 0 !important;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  max-width: 270px;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .patriotic-title { font-size: 2.2rem; gap: 8px; }
+  .rotating-chakra { width: 30px; height: 30px; }
+}
+
+/* --- GRID & CARDS --- */
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.promise-card-luxury {
+  background: #ffffff;
+  border-radius: 0px 0px 25px 25px; /* Flat top, rounded bottom for a unique look */
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.promise-card-luxury:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-color: #FF9933;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 250px;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* Premium angled cut */
+}
+
+.promise-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 35px 25px;
+  text-align: center;
+}
+
+.promise-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px !important;
+}
+
+.promise-card-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 280px;
+  margin: 0 auto !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .patriotic-title { font-size: 2.2rem; gap: 10px; }
+  .rotating-chakra { width: 30px; height: 30px; }
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 900px) {
+  .hero-text-center h1 { font-size: 48px; }
+  .promise-section { grid-template-columns: 1fr; }
+  .float-img { width: 120px; opacity: 0.5; }
+  .hero-text-center { left: 5%; padding: 0 20px; }
 }

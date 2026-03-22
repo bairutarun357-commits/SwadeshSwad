@@ -1,0 +1,122 @@
+.reviews-section {
+  padding: 100px 20px;
+
+  /* 💎 Premium warm gradient */
+  background: linear-gradient(
+    135deg,
+    #fff8f0,
+    #fdebdc,
+    #f8dcc0
+  );
+
+  color: #2c2c2c;
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+.review-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #c9a227; /* deeper gold */
+}
+
+.title-underline {
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #facc15);
+  margin: 10px auto 40px;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* ===== CARD ===== */
+.review-card {
+  min-width: 100%;
+  padding: 40px 20px;
+}
+
+.review-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+
+  /* 💎 subtle premium touch */
+  border: 3px solid #facc15;
+}
+
+/* Name */
+.review-card h3 {
+  margin: 5px 0;
+  color: #1a1a1a;
+}
+
+/* Location */
+.location {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+}
+
+/* ⭐ Stars */
+.stars {
+  color: #facc15;
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* Review text */
+.review-text {
+  font-style: italic;
+  max-width: 600px;
+  margin: auto;
+  color: #444;
+}
+
+/* ===== ARROWS ===== */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: rgba(255,255,255,0.6);
+  border: none;
+  color: #333;
+
+  font-size: 2rem;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.left { left: 10px; }
+.right { right: 10px; }
+
+/* ===== DOTS ===== */
+.dots {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #cfcfcf;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #d4af37;
+}

@@ -61,6 +61,78 @@ function Desserts() {
   price: 150,
   description: "Thick and creamy flavored milkshake.",
   image: "/milkshake.jpeg"
+},
+{
+  name: "Red Velvet Cake",
+  price: 220,
+  description: "Soft and moist red velvet cake with cream cheese frosting.",
+  image: "/redvelvet.jpg"
+},
+{
+  name: "Black Forest Cake",
+  price: 200,
+  description: "Chocolate sponge layered with cream and cherries.",
+  image: "/blackforest.jpg"
+},
+{
+  name: "Tiramisu",
+  price: 260,
+  description: "Classic Italian dessert with coffee and mascarpone.",
+  image: "/tiramisu.jpg"
+},
+{
+  name: "Waffles",
+  price: 180,
+  description: "Crispy waffles served with syrup and toppings.",
+  image: "/waffles.jpg"
+},
+{
+  name: "Pancakes",
+  price: 170,
+  description: "Fluffy pancakes served with honey or chocolate.",
+  image: "/pancakes.jpg"
+},
+{
+  name: "Donuts",
+  price: 140,
+  description: "Soft fried donuts with chocolate glaze.",
+  image: "/donuts.jpg"
+},
+{
+  name: "Mango Delight",
+  price: 160,
+  description: "Refreshing mango dessert with cream layers.",
+  image: "/mangodelight.jpg"
+},
+{
+  name: "Kulfi",
+  price: 120,
+  description: "Traditional Indian frozen dessert with rich flavors.",
+  image: "/kulfi.jpg"
+},
+{
+  name: "Jalebi",
+  price: 130,
+  description: "Crispy spiral sweets soaked in sugar syrup.",
+  image: "/jalebi.jpg"
+},
+{
+  name: "Rabri",
+  price: 150,
+  description: "Thickened sweet milk dessert with dry fruits.",
+  image: "/rabri.jpg"
+},
+{
+  name: "Chocolate Truffle Cake",
+  price: 240,
+  description: "Rich chocolate cake with smooth ganache.",
+  image: "/trufflecake.jpg"
+},
+{
+  name: "Strawberry Ice Cream",
+  price: 140,
+  description: "Creamy strawberry flavored ice cream.",
+  image: "/strawberryicecream.jpg"
 }
 
   ];
@@ -113,14 +185,6 @@ function Desserts() {
     First
   </button>
 
-  {/* Previous Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage - 1)} 
-    disabled={currentPage === 1}
-  >
-    Prev
-  </button>
-
   {/* Page Numbers */}
   {[...Array(totalPages)].map((_, i) => (
     <button 
@@ -131,14 +195,6 @@ function Desserts() {
       {i + 1}
     </button>
   ))}
-
-  {/* Next Page */}
-  <button 
-    onClick={() => setCurrentPage(currentPage + 1)} 
-    disabled={currentPage === totalPages}
-  >
-    Next
-  </button>
 
   {/* Last Page */}
   <button 
