@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import Reviews from "./Reviews";
+import Veg from "./Veg";
+import { Link } from "react-router-dom";
 
 function Home() {
   const videoRef = useRef(null);
@@ -51,7 +53,10 @@ function Home() {
           soul of Bharat, delivered with precision.
         </p>
         <div className="hero-button-group">
-          <button className="order-now-btn premium">Explore Menu</button>
+          <Link to="/veg">
+  <button className="order-now-btn premium">Explore Menu</button>
+       </Link>
+          
          
         </div>
       </motion.div>

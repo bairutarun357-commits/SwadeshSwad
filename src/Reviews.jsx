@@ -8,7 +8,7 @@ function Reviews() {
 
   const reviews = [
     {
-      name: "Nithin",
+      name: "Bairu Nithin",
       location: "Kavadiguda, Hyderabad",
       rating: 5,
       text: "Amazing taste! Food was fresh and delivery was quick.",
