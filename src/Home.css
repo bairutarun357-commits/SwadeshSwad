@@ -186,7 +186,7 @@ body {
 /* ===== SLIDER CONTAINER ===== */
 .slider {
   width: 100%;
-  height: 260px;              /* increased height to prevent cutting */
+  height: 200px;              /* increased height to prevent cutting */
   overflow: hidden;
   display: flex;
   align-items: center;
