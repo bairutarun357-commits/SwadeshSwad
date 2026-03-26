@@ -156,7 +156,7 @@ function Vegan() {
 
       <div className="card-container">
   {currentItems.map((item, index) => (
-    <div className="card sweet-theme" key={index}>
+    <div className="card Vegan-theme" key={index}>
       <div className="badge">Vegan</div>
       <img src={item.image} alt={item.name} />
 

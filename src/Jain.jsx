@@ -154,7 +154,7 @@ function Jain() {
       
 <div className="card-container">
   {currentItems.map((item, index) => (
-    <div className="card veg-theme" key={index}>
+    <div className="card jain-theme" key={index}>
       <div className="badge">Jain</div>
       <img src={item.image} alt={item.name} />
 

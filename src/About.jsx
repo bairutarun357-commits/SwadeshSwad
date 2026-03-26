@@ -39,11 +39,11 @@ function About() {
   <div className="flavors-image-container">
     <img src="/indian1.jpg" alt="Global Food Bowls" className="main-bowl-img" />
     <div className="stats-badge">
-      <span className="count">7M+</span>
+      <span className="count">7K+</span>
       <span className="label">Happy Customers</span>
     </div>
     <div className="rating-badge">
-      <span className="score">4.1</span>
+      <span className="score">4.6 </span>
       <span className="label">Rating</span>
     </div>
   </div>
@@ -52,8 +52,8 @@ function About() {
       {/* SCROLLABLE DETAIL SECTIONS */}
       <section className="about-details">
         {[
-          { title: "Our Story", text: "Swadesh Swad brings the essence of Bharat to your plate.", img: "/indian2.jpg", rev: false },
-          { title: "Our Philosophy", text: "Quality and authenticity in every single bite.", img: "/indian3.jpg", rev: true }
+          { title: "Our Story", text:" At Swadesh Swad, we bring the heart and soul of Bharat to your plate, where every dish is a celebration of centuries-old traditions, vibrant spices, and authentic flavors that transport you across the length and breadth of India.", img: "/indian2.jpg", rev: false },
+          { title: "Our Philosophy", text: "Experience unmatched quality and authentic flavors in every single bite, where each morsel reflects our dedication to freshness, tradition, and the true taste of excellence.", img: "/indian3.jpg", rev: true }
         ].map((item, index) => (
           <motion.div 
             className={`detail-row ${item.rev ? 'reverse' : ''}`}

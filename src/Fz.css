@@ -13,7 +13,7 @@
 /* ===== CARD ===== */
 .card {
   width: 260px;
-  height: 340px; /* reduced height */
+  height: 350px; /* reduced height */
   display: flex;
   flex-direction: column;
   background: white;
@@ -71,7 +71,7 @@
 /* ===== BUTTON (NO COLOR CHANGE) ===== */
 .card button {
   width: 80%;              /* 👈 reduced width */
-  padding: 6px 10px;       /* 👈 smaller padding */
+  padding: 5px 10px;       /* 👈 smaller padding */
   font-size: 13px;         /* 👈 smaller text */
   border-radius: 20px;     /* slightly tighter */
   background-color: #facc15;
@@ -111,15 +111,25 @@
 .veg-theme button { background: linear-gradient(135deg, #11998e, #38ef7d); }
 .veg-theme .badge { background: #2e7d32; }
 
+/* Dark Forest Green Theme (Jain) */
+.jain-theme .price { color: #1b5e20; } /* Dark Forest Green */
+.jain-theme button { background: linear-gradient(135deg, #2e7d32, #1b5e20); } /* Lush Green → Dark Green */
+.jain-theme .badge { background: #2e7d32; }
+
 /* Red Theme (Non-Veg) */
 .nonveg-theme .price { color: #b71c1c; }
 .nonveg-theme button { background: linear-gradient(135deg, #e53935, #b71c1c); }
 .nonveg-theme .badge { background: #b71c1c; }
 
 /* Sweet Theme (Vegan & Desserts) */
-.sweet-theme .price { color: #d81b60; }
-.sweet-theme button { background: linear-gradient(135deg, #ff4081, #f50057); }
-.sweet-theme .badge { background: #ff4081; }
+.sweet-theme .price { color: #a0522d; } /* Chocolate Brown */
+.sweet-theme button { background: linear-gradient(135deg, #d2691e, #a0522d); } /* Caramel → Chocolate */
+.sweet-theme .badge { background: #d2691e; }
+
+/* Vegan Theme (Vegan) */
+.Vegan-theme .price { color: #e67e22; } /* Deep Apricot/Orange */
+.Vegan-theme button { background: linear-gradient(135deg, #f5b041, #e67e22); } /* Soft Apricot → Deep Apricot */
+.Vegan-theme .badge { background: #f5b041; }
 
 /* LOGIN PAGE */
 

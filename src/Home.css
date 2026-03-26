@@ -183,11 +183,24 @@ body {
   width: 100%;
 }
 
-/* Smooth infinite scroll */
+/* ===== SLIDER CONTAINER ===== */
+.slider {
+  width: 100%;
+  height: 260px;              /* increased height to prevent cutting */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 20px 0;            /* extra breathing space */
+}
+
+/* ===== SLIDE TRACK (AUTO SCROLL) ===== */
 .slide-track {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   animation: scroll 35s linear infinite;
+  height: 100%;
+  align-items: center;
 }
 
 /* Pause on hover 🔥 */
@@ -201,9 +214,21 @@ body {
   height: 180px;
   flex-shrink: 0;
   perspective: 1000px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* floating animation */
+  animation: float 4s ease-in-out infinite;
 }
 
-/* IMAGE STYLE */
+/* alternate floating delay */
+.pick-circle:nth-child(even) {
+  animation-delay: 1s;
+}
+
+/* ===== IMAGE STYLE ===== */
 .pick-circle img {
   width: 100%;
   height: 100%;
@@ -217,27 +242,18 @@ body {
   border: 2px solid rgba(255,255,255,0.8);
 
   box-shadow: 
-    0 15px 35px rgba(0,0,0,0.15),
+    0 20px 40px rgba(0,0,0,0.15),
     inset 0 2px 8px rgba(255,255,255,0.5);
 
   transition: all 0.4s ease;
 }
 
-/* 🔥 3D HOVER */
+/* 🔥 HOVER EFFECT (NO CUT NOW) */
 .pick-circle:hover img {
   transform: scale(1.15) rotateY(8deg);
   box-shadow: 
     0 25px 50px rgba(0,0,0,0.25),
     inset 0 3px 10px rgba(255,255,255,0.6);
-}
-
-/* ✨ subtle floating animation */
-.pick-circle {
-  animation: float 4s ease-in-out infinite;
-}
-
-.pick-circle:nth-child(even) {
-  animation-delay: 1s;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -247,12 +263,17 @@ body {
 }
 
 @keyframes float {
-  0%,100% { transform: translateY(0); }
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .slider {
+    height: 200px;
+    padding: 15px 0;
+  }
+
   .pick-circle {
     width: 130px;
     height: 130px;

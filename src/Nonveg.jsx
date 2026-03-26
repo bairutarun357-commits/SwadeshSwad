@@ -10,12 +10,18 @@ function Nonveg() {
   let dispatch= useDispatch();
   const nonvegItems = [
     {
-      name: "Chicken Biryani",
-      price: 210,
-      description: "Spicy basmati rice with juicy chicken pieces.",
-      image: "/chickenbiryani.jpg"
-    },
-    {
+  name: "Hyderabadi Chicken Dum Biryani",
+  price: 260,
+  description: "Authentic dum-cooked biryani with rich spices and saffron.",
+  image: "/hydchickenbiryani.jpg"
+},
+{
+  name: "Hyderabadi Mutton Dum Biryani",
+  price: 280,
+  description: "classic, authentic regional name.",
+  image: "/muttonbiryani1.jpg"
+},
+ {
       name: "Butter Chicken",
       price: 280,
       description: "Creamy tomato gravy with tender chicken.",
@@ -52,22 +58,10 @@ function Nonveg() {
   image: "/prawnmasala.jpg"
 },
 {
-  name: "Mutton Biryani",
-  price: 250,
-  description: "Boiled eggs cooked in spicy masala.",
-  image: "/muttonbiryani.jpg"
-},
-{
   name: "Chicken Shawarma",
   price: 190,
   description: "Grilled chicken wrapped in soft bread.",
   image: "/shawarma.jpg"
-},
-{
-  name: "Chicken Dum Biryani",
-  price: 260,
-  description: "Authentic dum-cooked biryani with rich spices and saffron.",
-  image: "/hydchickenbiryani.jpg"
 },
 {
   name: "Chicken Korma",
@@ -75,6 +69,12 @@ function Nonveg() {
   description: "Mild and creamy chicken curry with cashew gravy.",
   image: "/chickenkorma.jpg"
 },
+ {
+      name: "Chicken Biryani",
+      price: 210,
+      description: "Spicy basmati rice with juicy chicken pieces.",
+      image: "/chickenbiryani.jpg"
+    },
 {
   name: "Pepper Chicken",
   price: 230,
